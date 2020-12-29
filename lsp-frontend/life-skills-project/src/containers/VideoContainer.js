@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import VideoCard from '../components/VideoCard'
 
 export default class VideoContainer extends Component {
     render() {
         return (
             <div>
-                <h2>video container</h2>
+                <VideoCard />
             </div>
         )
     }
 }
+
