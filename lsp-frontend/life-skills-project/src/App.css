@@ -37,6 +37,7 @@
   }
 }
 
+
 .Navbar {
   background-color: navy;
   width: 100%;
@@ -47,7 +48,7 @@
 }
 
 .Navbar .leftSide {
-  flex: 33%;
+  flex: 33.33%;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -58,7 +59,7 @@
 }
 
 .Navbar .rightSide {
-  flex: 33%;
+  flex: 33.33%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -70,7 +71,7 @@
 }
 
 .Navbar .center {
-  flex: 33%;
+  flex: 33.34%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,24 +97,24 @@
   width: 100%;
   display: grid;
   grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
-  align-items: center;
-  }
+  align-items: start;
+  padding: 10px;
+  background-color: lightgrey;  
+  gap: 10px;
+}
 
 .card {
+  background-color: white;
   padding: 10px;
-  max-width: 100%;
-  height: auto;  
-  
-  
+  width: 95%;
+  height: 95%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 img {
   max-width: 90%;
-  height: auto;
 }
 
-.title {
 
-}
 
 
