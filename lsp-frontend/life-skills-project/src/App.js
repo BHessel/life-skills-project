@@ -5,11 +5,18 @@ import SideNavBar from './containers/SideNavBar';
 import VideoContainer from './containers/VideoContainer';
 
 
+const url = 'http://localhost:3000/videos'
 class App extends Component {
 
-//   componentDidMount(){
+state = {
+  videos: []
+}
 
-// }
+async componentDidMount(){
+  const response = await fetch(url)
+  const videos = await response.json()
+  this.setState({ videos })
+}
 
 
 
@@ -18,7 +25,9 @@ render() {
     <div className="App">
       <TopNavBar/>
       <SideNavBar/>
-      <VideoContainer/>
+      <VideoContainer
+        videos = {this.state.videos}
+      />
      
     </div>
   );

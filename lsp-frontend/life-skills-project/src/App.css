@@ -92,7 +92,28 @@
   font-size: 16px;
 }
 
-.container {
-  padding-right: 2%;
-  padding-left: 2%;
+.video-container {
+  width: 100%;
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+  align-items: center;
+  }
+
+.card {
+  padding: 10px;
+  max-width: 100%;
+  height: auto;  
+  
+  
 }
+
+img {
+  max-width: 90%;
+  height: auto;
+}
+
+.title {
+
+}
+
+

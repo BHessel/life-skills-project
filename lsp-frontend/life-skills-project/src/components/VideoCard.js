@@ -1,54 +1,38 @@
-import React from 'react'
-import { Grid, Image } from 'semantic-ui-react'
+import React, { Component } from 'react'
+
+export default class VideoCard extends Component {
+    render() {
+        return (
+        
+                <div className="card" key={this.props.key} onClick={() => console.log("click to open video")}>
+                    <div className="image">
+                        <img src={this.props.video.thumbnail} alt="video thumbnail"/>
+                    </div>
+                    <div className="title">
+                         <p>{this.props.video.title}</p>
+                    </div>
+                </div>
+        )
+    }
+}
 
 
-const VideoCard = (props) => (
-    
-<div className="container">
-  <Grid>
-    <Grid.Row columns={3}>
-      <Grid.Column>
-        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-      </Grid.Column>
-      <Grid.Column>
-        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-      </Grid.Column>
-      <Grid.Column>
-        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-      </Grid.Column>
-    </Grid.Row>
 
-    <Grid.Row columns={3}>
-      <Grid.Column>
-        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-      </Grid.Column>
-      <Grid.Column>
-        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-      </Grid.Column>
-      <Grid.Column>
-        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-      </Grid.Column>
-    </Grid.Row>
 
-    <Grid.Row columns={3}>
-      <Grid.Column>
-        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-      </Grid.Column>
-      <Grid.Column>
-        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-      </Grid.Column>
-      <Grid.Column>
-        <Image src='https://react.semantic-ui.com/images/wireframe/image.png' />
-      </Grid.Column>
-    </Grid.Row>
+// export default class VideoCard extends Component {
+//     render() {
+//         return (
+//             <div className="col">
+//                 <div className="card" key={this.props.video.id} onClick={() => console.log("click to open video")}>
+//                     <div className="image">
+//                         <img src={this.props.video.thumbnail} alt="video thumbnail"/>
+//                     </div>
+//                     <div className="title">
+//                         <p>{this.props.video.title}</p>
+//                     </div>
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
 
-  </Grid>
-  </div>
-)
-
-const styleLink = document.createElement("link");
-styleLink.rel = "stylesheet";
-styleLink.href = "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
-document.head.appendChild(styleLink);
-
-export default VideoCard
