@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import React, {Component} from 'react';
 import TopNavBar from './containers/TopNavBar';
 import SideNavBar from './containers/SideNavBar';
