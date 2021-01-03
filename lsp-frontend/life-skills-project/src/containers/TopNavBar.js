@@ -5,7 +5,7 @@ export default class TopNavBar extends Component {
         return (
             <div className='Navbar'>
                 <div className='leftSide'>
-                    <h1>Our Logo</h1>
+                    <img src={this.props.logo}></img>
                 </div>
                 <div className='center'>
                     <input type='text' placeholder='Search...'/>
