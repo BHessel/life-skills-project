@@ -34,8 +34,9 @@ customSearch = (e) => {
 
 
 render() {
-  const searchVids = this.state.videos.filter(vid => vid.title.includes(this.state.search))
+  const searchVids = this.state.videos.filter(vid => vid.title.toLowerCase().includes(this.state.search.toLowerCase()))
   console.log(searchVids)
+  
   return (
     <div className="App">
       <TopNavBar
