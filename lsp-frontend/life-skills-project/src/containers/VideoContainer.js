@@ -19,11 +19,3 @@ export default class VideoContainer extends Component {
         )
     }
 }
-
-
-// this.props.videos.map((vid, index) =>
-// <VideoCard 
-//     video={vid}
-//     key={index}
-// />
-// )

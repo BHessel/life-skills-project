@@ -13,7 +13,8 @@ class App extends Component {
 
 state = {
   videos: [],
-  currentPage: 1
+  currentPage: 1,
+  currentVids: []
 }
 
 changeCurrentPage = numPage => {
@@ -35,9 +36,9 @@ render() {
       />
       <SideNavBar/>
       <VideoContainer
-        videos = {this.state.videos}
+        videos = {this.state.videos.slice((this.state.currentPage - 1) * 9, ((this.state.currentPage - 1) * 9) + 9 )}
       />
-     
+
     <Pagination
       currentPage={this.state.currentPage}
       totalSize={this.state.videos.length}
