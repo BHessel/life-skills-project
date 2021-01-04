@@ -8,7 +8,7 @@ export default class TopNavBar extends Component {
                     <img src={this.props.logo}></img>
                 </div>
                 <div className='center'>
-                    <input type='text' placeholder='Search...'/>
+                    <input type='text' placeholder='Search...' onChange = {(e) => this.props.customSearch(e)}/>
                     <button>Search</button></div>
                 <div className='rightSide'>
                     <h2>Log In/Out</h2>

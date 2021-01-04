@@ -14,7 +14,7 @@ class App extends Component {
 state = {
   videos: [],
   currentPage: 1,
-  currentVids: []
+  search: ""
 }
 
 changeCurrentPage = numPage => {
@@ -27,16 +27,24 @@ async componentDidMount(){
   this.setState({ videos })
 }
 
+customSearch = (e) => {
+  this.setState({search: e.target.value})
+}
+
+
 
 render() {
+  const searchVids = this.state.videos.filter(vid => vid.title.includes(this.state.search))
+  console.log(searchVids)
   return (
     <div className="App">
       <TopNavBar
         logo={logo}
+        customSearch = {this.customSearch}
       />
       <SideNavBar/>
       <VideoContainer
-        videos = {this.state.videos.slice((this.state.currentPage - 1) * 9, ((this.state.currentPage - 1) * 9) + 9 )}
+        videos = {searchVids.slice((this.state.currentPage - 1) * 9, ((this.state.currentPage - 1) * 9) + 9 )}
       />
 
     <Pagination
