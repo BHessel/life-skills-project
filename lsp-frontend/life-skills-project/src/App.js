@@ -27,10 +27,16 @@ changeCurrentPage = numPage => {
   this.setState({ currentPage: numPage });
 };
 
-async componentDidMount(){
-  const response = await fetch(url)
-  const videos = await response.json()
-  this.setState({ videos })
+componentDidMount(){
+  fetch(finalUrl)
+    .then(response => response.json())
+    .then((YTVids) => {
+      const videos = YTVids.items.map(vidObj => vidObj)
+      this.setState({videos})
+    })
+    .catch((error) => {
+      console.error(error);
+    })
 }
 
 customSearch = (e) => {
@@ -40,7 +46,8 @@ customSearch = (e) => {
 
 
 render() {
-  const searchVids = this.state.videos.filter(vid => vid.title.toLowerCase().includes(this.state.search.toLowerCase()))
+  const searchVids = this.state.videos.filter(vid => vid.snippet.title.toLowerCase().includes(this.state.search.toLowerCase()))
+  
   console.log(searchVids)
   
   return (
