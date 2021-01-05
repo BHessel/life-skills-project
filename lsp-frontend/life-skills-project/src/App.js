@@ -7,14 +7,20 @@ import Pagination from "react-pagination-js";
 import "react-pagination-js/dist/styles.css";
 import logo from "./logo1.png";
 
+//https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&key=AIzaSyAfwqIYBrLrdr6WsciqZSWtTHeukaHApf8
+const key='AIzaSyAfwqIYBrLrdr6WsciqZSWtTHeukaHApf8'
+const maxResults=25
+const finalUrl=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&key=${key}`
+
 
 const url = 'http://localhost:3000/videos'
-class App extends Component {
 
-state = {
-  videos: [],
-  currentPage: 1,
-  search: ""
+class App extends Component {
+  
+  state = {
+    videos: [],
+    currentPage: 1,
+    search: ""
 }
 
 changeCurrentPage = numPage => {
@@ -48,14 +54,13 @@ render() {
         videos = {searchVids.slice((this.state.currentPage - 1) * 9, ((this.state.currentPage - 1) * 9) + 9 )}
       />
 
-    <Pagination
-      currentPage={this.state.currentPage}
-      totalSize={this.state.videos.length}
-      sizePerPage={9}
-      changeCurrentPage={this.changeCurrentPage}
-      theme="dark"
-    />
-  
+      <Pagination
+        currentPage={this.state.currentPage}
+        totalSize={this.state.videos.length}
+        sizePerPage={9}
+        changeCurrentPage={this.changeCurrentPage}
+        theme="dark"
+      />
     </div>
   );
 }
