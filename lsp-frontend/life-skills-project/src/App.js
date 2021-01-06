@@ -6,11 +6,12 @@ import VideoContainer from './containers/VideoContainer';
 import Pagination from "react-pagination-js";
 import "react-pagination-js/dist/styles.css";
 import logo from "./logo1.png";
-
+//AIzaSyBs4r7n9CX3pz634lgccEbXaHABOrYqBac
+//https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=taxes%7Chome%20improvement&key=[YOUR_API_KEY]'
 //https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&key=AIzaSyAfwqIYBrLrdr6WsciqZSWtTHeukaHApf8
 const key='AIzaSyAfwqIYBrLrdr6WsciqZSWtTHeukaHApf8'
-const maxResults=25
-const finalUrl=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&key=${key}`
+const maxResults=100
+const finalUrl=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&q=taxes%7Chome%20improvement&key=${key}`
 
 
 const url = 'http://localhost:3000/videos'
@@ -63,7 +64,7 @@ render() {
 
       <Pagination
         currentPage={this.state.currentPage}
-        totalSize={this.state.videos.length}
+        totalSize={searchVids.length}
         sizePerPage={9}
         changeCurrentPage={this.changeCurrentPage}
         theme="dark"
