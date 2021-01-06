@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import '../App.scss'
+import {
+    BrowserRouter as Router,
+    Link
+  } from "react-router-dom";
+
+
 export default class TopNavBar extends Component {
     render() {
         return (
@@ -9,9 +15,11 @@ export default class TopNavBar extends Component {
                 </div>
                 <div className='center'>
                     <input type='text' placeholder='Search...' onChange = {(e) => this.props.customSearch(e)}/>
-                    <button>Search</button></div>
+                   </div>
                 <div className='rightSide'>
-                    <h2>Log In/Out</h2>
+                <button><Link to="/login">Log In/Out</Link></button>
+                    
+                    
                 </div>
             </div>
         )

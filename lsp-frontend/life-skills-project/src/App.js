@@ -1,11 +1,14 @@
 import './App.scss';
 import React, {Component} from 'react';
 import TopNavBar from './containers/TopNavBar';
-import Login from './containers/Login';
+import Login from './components/Login';
 import VideoContainer from './containers/VideoContainer';
 import Pagination from "react-pagination-js";
 import "react-pagination-js/dist/styles.css";
 import logo from "./logo1.png";
+import {
+  Route
+} from "react-router-dom";
 //AIzaSyBs4r7n9CX3pz634lgccEbXaHABOrYqBac
 //https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=taxes%7Chome%20improvement&key=[YOUR_API_KEY]'
 //https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&key=AIzaSyAfwqIYBrLrdr6WsciqZSWtTHeukaHApf8
@@ -57,7 +60,11 @@ render() {
         logo={logo}
         customSearch = {this.customSearch}
       />
-      <Login/>
+      <Route path ="/login">
+        <Login/>
+        </Route>
+                    
+      
       <VideoContainer
         videos = {searchVids.slice((this.state.currentPage - 1) * 9, ((this.state.currentPage - 1) * 9) + 9 )}
       />
