@@ -1,7 +1,7 @@
 import './App.scss';
 import React, {Component} from 'react';
 import TopNavBar from './containers/TopNavBar';
-import SideNavBar from './containers/SideNavBar';
+import Login from './containers/Login';
 import VideoContainer from './containers/VideoContainer';
 import Pagination from "react-pagination-js";
 import "react-pagination-js/dist/styles.css";
@@ -57,7 +57,7 @@ render() {
         logo={logo}
         customSearch = {this.customSearch}
       />
-      <SideNavBar/>
+      <Login/>
       <VideoContainer
         videos = {searchVids.slice((this.state.currentPage - 1) * 9, ((this.state.currentPage - 1) * 9) + 9 )}
       />
