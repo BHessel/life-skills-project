@@ -12,6 +12,7 @@ export default class Favorites extends Component {
                              (<VideoCard 
                                 video={vid}
                                 key={index}
+                                removeClick={this.props.removeFromFavorites}
                             />)
                         )
                         }

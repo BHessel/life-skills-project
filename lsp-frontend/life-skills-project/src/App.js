@@ -51,9 +51,13 @@ customSearch = (e) => {
 }
 
 addToFavorites = (video) => {
-  console.log(video)
   if(!this.state.favorites.includes(video)){
   this.setState({ favorites: [...this.state.favorites, video]})}
+}
+
+removeFromFavorites = (video) => {
+  let favorites = this.state.favorites.filter(vid => vid.id.videoId !== video.id.videoId)
+  this.setState({ favorites })
 }
 
 
@@ -70,9 +74,9 @@ render() {
       />
 
       <Switch>
-      <Route path ="/login" component={Login}/>
+      <Route exact path ="/login" component={Login}/>
       
-      <Route path ="/favorites" render={() => <Favorites videos = {this.state.favorites.slice((this.state.currentPage - 1) * 9, ((this.state.currentPage - 1) * 9) + 9 )}/>}/>
+      <Route exact path ="/favorites" render={() => <Favorites removeFromFavorites={this.removeFromFavorites} videos = {this.state.favorites.slice((this.state.currentPage - 1) * 9, ((this.state.currentPage - 1) * 9) + 9 )}/>}/>
         
       <Route exact path ="/" render={() => <VideoContainer addToFavorites={this.addToFavorites}
         videos = {searchVids.slice((this.state.currentPage - 1) * 9, ((this.state.currentPage - 1) * 9) + 9 )}

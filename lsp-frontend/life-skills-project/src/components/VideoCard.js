@@ -33,7 +33,10 @@ export default class VideoCard extends Component {
                     </div> 
                     <div>
                     <button onClick={() => this.props.buttonClick(this.props.video)}>Add To Favorites</button>
-                    </div>    
+                    </div>  
+                    <div>
+                    <button onClick={() => this.props.removeClick(this.props.video)}>Remove from Favorites</button>
+                    </div>   
                 </div>
         )
     }

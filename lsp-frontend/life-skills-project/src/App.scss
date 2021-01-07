@@ -103,6 +103,16 @@
   gap: 10px;
 }
 
+.playlist-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  padding: 10px;
+  background-color: rgb(233, 233, 233);  
+  gap: 10px;
+}
+
 .card {
   background-color: white;
   padding: 10px;
