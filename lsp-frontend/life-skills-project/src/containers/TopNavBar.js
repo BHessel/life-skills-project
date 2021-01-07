@@ -11,7 +11,7 @@ export default class TopNavBar extends Component {
         return (
             <div className='Navbar'>
                 <div className='leftSide'>
-                    <img src={this.props.logo} alt='logo'></img>
+                    <Link to='/'><img src={this.props.logo} alt='logo'></img></Link>
                 </div>
                 <div className='center'>
                     <input type='text' placeholder='Search...' onChange = {(e) => this.props.customSearch(e)}/>
