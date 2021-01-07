@@ -103,6 +103,9 @@
   background-color: rgb(233, 233, 233); 
   justify-self: stretch; 
   gap: 10px;
+  grid-template-areas: 
+    "header header header"
+    "h2     h2     h2"
 }
 
 .playlist-container {
@@ -119,6 +122,14 @@
 
 .playlist-header {
   grid-area: header
+}
+
+.video-header {
+  grid-area: header
+}
+
+.video-subheader {
+  grid-area: h2
 }
 
 .card {
