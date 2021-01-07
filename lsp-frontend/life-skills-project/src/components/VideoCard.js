@@ -30,7 +30,10 @@ export default class VideoCard extends Component {
                     <div className="modalComponent">
                         <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId={this.props.video.id.videoId} onClose={() => this.setState({isOpen: false})} />
                         <button onClick={this.openModal}>Play Now</button>
-                    </div>     
+                    </div> 
+                    <div>
+                    <button onClick={() => this.props.buttonClick(this.props.video)}>Add To Favorites</button>
+                    </div>    
                 </div>
         )
     }

@@ -17,6 +17,7 @@ export default class TopNavBar extends Component {
                     <input type='text' placeholder='Search...' onChange = {(e) => this.props.customSearch(e)}/>
                    </div>
                 <div className='rightSide'>
+                <button><Link to="/favorites">View My Favorites</Link></button>
                 <button><Link to="/login">Log In/Out</Link></button>
                     
                     

@@ -2,11 +2,13 @@ import './App.scss';
 import React, {Component} from 'react';
 import TopNavBar from './containers/TopNavBar';
 import Login from './components/Login';
+import Favorites from './containers/Favorites'
 import VideoContainer from './containers/VideoContainer';
 import Pagination from "react-pagination-js";
 import "react-pagination-js/dist/styles.css";
 import logo from "./logo1.png";
 import {
+  Switch,
   Route
 } from "react-router-dom";
 //AIzaSyBs4r7n9CX3pz634lgccEbXaHABOrYqBac
@@ -24,7 +26,8 @@ class App extends Component {
   state = {
     videos: [],
     currentPage: 1,
-    search: ""
+    search: "",
+    favorites: []
 }
 
 changeCurrentPage = numPage => {
@@ -47,12 +50,17 @@ customSearch = (e) => {
   this.setState({search: e.target.value})
 }
 
+addToFavorites = (video) => {
+  console.log(video)
+  if(!this.state.favorites.includes(video)){
+  this.setState({ favorites: [...this.state.favorites, video]})}
+}
+
 
 
 render() {
   const searchVids = this.state.videos.filter(vid => vid.snippet.title.toLowerCase().includes(this.state.search.toLowerCase()))
   
-  console.log(searchVids)
   
   return (
     <div className="App">
@@ -60,14 +68,19 @@ render() {
         logo={logo}
         customSearch = {this.customSearch}
       />
-      <Route path ="/login">
-        <Login/>
-        </Route>
-                    
+
+      <Switch>
+      <Route path ="/login" component={Login}/>
       
-      <VideoContainer
+      <Route path ="/favorites" render={() => <Favorites videos = {this.state.favorites.slice((this.state.currentPage - 1) * 9, ((this.state.currentPage - 1) * 9) + 9 )}/>}/>
+        
+      <Route exact path ="/" render={() => <VideoContainer addToFavorites={this.addToFavorites}
         videos = {searchVids.slice((this.state.currentPage - 1) * 9, ((this.state.currentPage - 1) * 9) + 9 )}
-      />
+        
+      />}/>
+      
+
+      </Switch>
 
       <Pagination
         currentPage={this.state.currentPage}

@@ -13,6 +13,7 @@ export default class VideoContainer extends Component {
                             (<VideoCard 
                                 video={vid}
                                 key={index}
+                                buttonClick={this.props.addToFavorites}
                             />)
                          )
                         
