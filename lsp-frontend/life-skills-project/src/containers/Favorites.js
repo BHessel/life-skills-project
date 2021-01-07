@@ -1,24 +1,28 @@
-import React, { Component } from 'react'
-import VideoCard from '../components/VideoCard'
+import React, { Component } from 'react';
+import VideoCard from '../components/VideoCard';
 
 
 export default class Favorites extends Component {
     render() {
         return (
                  <div className="playlist-container">
-                    <h1>my playlist</h1>
+                    <h1 className='playlist-header'>My Playlist</h1>
                         
-                        {    this.props.videos.map((vid, index) =>
-                             (<VideoCard 
+                        {    this.props.videos.map((vid, i) =>
+                             (<>
+                             <div className={`pl-grid-${i}`}>
+                                <VideoCard 
                                 video={vid}
-                                key={index}
+                                key={i}
                                 removeClick={this.props.removeFromFavorites}
-                            />)
-                        )
+                            />
+                            </div>
+                            </>
+                        ))
                         }
-                        
+                    </div>    
                     
-            </div>
+            
         )
     }
 }

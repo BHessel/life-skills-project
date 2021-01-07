@@ -11,6 +11,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+
 //AIzaSyBs4r7n9CX3pz634lgccEbXaHABOrYqBac
 //AIzaSyAfwqIYBrLrdr6WsciqZSWtTHeukaHApf8
 //https://youtube.googleapis.com/youtube/v3/search?part=snippet%20&maxResults=25&q=taxes&key=
@@ -21,7 +22,7 @@ const maxResults=25
 const finalUrl=`https://youtube.googleapis.com/youtube/v3/search?part=snippet%20&maxResults=${maxResults}&q=taxes&key=${key}`
 
 
-const url = 'http://localhost:3000/videos'
+// const url = 'http://localhost:3000/videos'
 
 class App extends Component {
   

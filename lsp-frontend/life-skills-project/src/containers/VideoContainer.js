@@ -6,6 +6,7 @@ export default class VideoContainer extends Component {
     render() {
         
         return (
+            
             <div className="video-container">
                     {
                         

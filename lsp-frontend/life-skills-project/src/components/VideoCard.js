@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ModalVideo from 'react-modal-video'
 import 'react-modal-video/scss/modal-video.scss';
+import { Button } from 'semantic-ui-react'
 
 export default class VideoCard extends Component {
 
@@ -8,7 +9,7 @@ export default class VideoCard extends Component {
         super()
         this.state = {
           isOpen: false,
-          location: window.location.href.split('/')[3]
+          // location: window.location.href.split('/')[3]
         }
         this.openModal = this.openModal.bind(this)
       }
@@ -34,10 +35,9 @@ export default class VideoCard extends Component {
                     </div> 
                     <div className='conditional'>
                       {this.state.location === 'favorites' ?
-                       
-                        <button onClick={() => this.props.removeClick(this.props.video)}>Remove from Favorites</button> :
-                        
-                        <button onClick={() => this.props.buttonClick(this.props.video)}>Add To Favorites</button>
+                      <button onClick={() => this.props.removeClick(this.props.video)}>Remove from Favorites</button> :
+
+                      <button onClick={() => this.props.buttonClick(this.props.video)}>Add to Favorites</button>
                       }  
                     </div>
                        

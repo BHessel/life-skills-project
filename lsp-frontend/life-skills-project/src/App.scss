@@ -48,7 +48,7 @@
 }
 
 .Navbar .leftSide {
-  flex: 33.33%;
+  flex: 25%;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -59,7 +59,7 @@
 }
 
 .Navbar .rightSide {
-  flex: 33.33%;
+  flex: 25%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -70,8 +70,15 @@
   padding-right: 25px;
 }
 
-.Navbar .center {
-  flex: 33.34%;
+.Navbar .center-left {
+  flex: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Navbar .center-right {
+  flex: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,19 +94,14 @@
   color: black;
 }
 
-.center button {
-  height: 32px;
-  width: 70px;
-  font-size: 16px;
-}
-
 .video-container {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: start;
   padding: 10px;
-  background-color: rgb(233, 233, 233);  
+  background-color: rgb(233, 233, 233); 
+  justify-self: stretch; 
   gap: 10px;
 }
 
@@ -111,6 +113,12 @@
   padding: 10px;
   background-color: rgb(233, 233, 233);  
   gap: 10px;
+  grid-template-areas:
+    "header header header"
+}
+
+.playlist-header {
+  grid-area: header
 }
 
 .card {
