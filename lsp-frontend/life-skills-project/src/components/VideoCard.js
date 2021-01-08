@@ -9,7 +9,7 @@ export default class VideoCard extends Component {
         super()
         this.state = {
           isOpen: false,
-          // location: window.location.href.split('/')[3]
+          location: window.location.href.split('/')[3]
         }
         this.openModal = this.openModal.bind(this)
       }
@@ -31,13 +31,13 @@ export default class VideoCard extends Component {
                     </div>
                     <div className="modalComponent">
                         <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId={this.props.video.id.videoId} onClose={() => this.setState({isOpen: false})} />
-                        <button onClick={this.openModal}>Play Now</button>
+                        <button className='play-btn' onClick={this.openModal}>Play Now</button>
                     </div> 
                     <div className='conditional'>
                       {this.state.location === 'favorites' ?
-                      <button onClick={() => this.props.removeClick(this.props.video)}>Remove from Favorites</button> :
+                      <button className='remove-btn' onClick={() => this.props.removeClick(this.props.video)}>Remove from Favorites</button> :
 
-                      <button onClick={() => this.props.buttonClick(this.props.video)}>Add to Favorites</button>
+                      <button className='add-btn' onClick={() => this.props.buttonClick(this.props.video)}>Add to Favorites</button>
                       }  
                     </div>
                        

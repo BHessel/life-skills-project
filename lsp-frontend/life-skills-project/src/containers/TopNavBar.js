@@ -14,13 +14,13 @@ export default class TopNavBar extends Component {
                     <Link to='/'><img src={this.props.logo} alt='logo'></img></Link>
                 </div>
                 <div className='center-left'>
-                    <input type='text' placeholder='Search...' onChange = {(e) => this.props.customSearch(e)}/>
+                    <input className='search' type='text' placeholder='Search...' onChange = {(e) => this.props.customSearch(e)}/>
                 </div>
                 <div className='center-right'>
-                    <button><Link to="/favorites">View My Favorites</Link></button>
+                    <button className='view-favs'><Link to="/favorites">View My Favorites</Link></button>
                 </div>
                 <div className='rightSide'>
-                    <button><Link to="/login">Log In/Out</Link></button>
+                    <button className='log-btn'><Link to="/login">Log In/Out</Link></button>
                 </div>
             </div>
         )
